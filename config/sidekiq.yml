@@ -1,0 +1,8 @@
+---
+:concurrency: 1
+:queues:
+  - default
+  - mailers
+
+  - coin_machine_default
+  - coin_machine_mailers
