@@ -16,6 +16,7 @@ Rails.application.configure do
   # Run rails dev:cache to toggle caching.
   if Rails.root.join('tmp', 'caching-dev.txt').exist?
     config.cache_store = :memory_store
+    config.cache_store = :redis_store, "redis://localhost:6379/0/cache", { expires_in: 90.minutes }
     config.public_file_server.headers = {
       'Cache-Control' => "public, max-age=#{2.days.to_i}"
     }
@@ -38,21 +39,21 @@ Rails.application.configure do
   config.active_job.queue_name_prefix = "coin_machine"
   config.active_job.queue_name_delimiter = "_"
   
-  config.action_mailer.delivery_method = :letter_opener
+  # config.action_mailer.delivery_method = :letter_opener
   config.action_mailer.perform_deliveries = true
   config.action_mailer.perform_caching = false
   config.action_mailer.raise_delivery_errors = true
 
-  # config.action_mailer.delivery_method = :smtp
+  config.action_mailer.delivery_method = :smtp
   
-  # config.action_mailer.smtp_settings = {
-  #   :user_name => '88408ce06d4e8c',
-  #   :password => 'c05fb724e53e32',
-  #   :address => 'smtp.mailtrap.io',
-  #   :domain => 'smtp.mailtrap.io',
-  #   :port => '2525',
-  #   :authentication => :cram_md5
-  # }
+  config.action_mailer.smtp_settings = {
+    :user_name => '88408ce06d4e8c',
+    :password => 'c05fb724e53e32',
+    :address => 'smtp.mailtrap.io',
+    :domain => 'smtp.mailtrap.io',
+    :port => '2525',
+    :authentication => :cram_md5
+  }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log

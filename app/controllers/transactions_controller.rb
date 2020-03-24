@@ -110,8 +110,8 @@ class TransactionsController < ApplicationController
                 if admin_user.roles == 'Administrator'
                     puts admin_user.admin_id
                     mail = UserMailer.admin_email(admin_user.admin_id, @user_coin.name, @user_coin.value, @user_coin.count_status)
-                    mail.deliver_now!
-                    # mail.deliver_later
+                    mail.deliver_now
+                    # mail.deliver_later!
                 end
                 return false
 
@@ -126,8 +126,8 @@ class TransactionsController < ApplicationController
                 if admin_user.roles == 'Administrator'
                     puts admin_user.admin_id
                     mail = UserMailer.admin_email(admin_user.admin_id, @user_coin.name, @user_coin.value, @user_coin.count_status)
-                    mail.deliver_now!
-                    # mail.deliver_later
+                    mail.deliver_now
+                    # mail.deliver_later!
                 end
                 return false
                 
