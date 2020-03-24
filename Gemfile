@@ -6,11 +6,13 @@ ruby '2.5.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
+gem 'sqlite3', '~> 1.4', group: :development
 
 # gems required for heroku deployment
-gem 'pg', '0.18.1', group: :production
-gem 'rails_12factor', group: :production
+group :production do
+  gem 'pg', '0.18.1'
+  gem 'rails_12factor'
+end
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
