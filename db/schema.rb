@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_23_165903) do
+ActiveRecord::Schema.define(version: 2020_03_25_143306) do
 
   create_table "admins", force: :cascade do |t|
     t.string "username"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 2020_03_23_165903) do
     t.string "roles"
     t.integer "admin_id"
     t.index ["admin_id"], name: "index_users_on_admin_id"
+    t.index ["api_key"], name: "index_users_on_api_key", unique: true
   end
 
   add_foreign_key "coins", "users"
