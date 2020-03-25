@@ -1,7 +1,7 @@
 require 'securerandom'
 
 class UsersController < ApplicationController
-    before_action :auth_user, only: [:total_coins_value, :all_transactions, :user_transactions]
+    before_action :auth_user, only: [:index, :total_coins_value, :all_transactions, :user_transactions]
     before_action :set_user, only: [:get_user_withdrawals, :get_user_deposits]
     before_action :set_user_coin, only: [:show, :update, :destroy]
     before_action :set_user_total_coins, only: [:total_coins_value]
