@@ -7,10 +7,28 @@ This project is intended to achieve the objectives of the author which is to des
 
 It made use of the application Resources, Models, Controllers, Rspec and the default lightweight sqlite for data
 
-It also was assisted by third party ruby gems such as 
+It also was assisted by third party ruby gems such as
+
 -letter_opener (for quick review of emails)
+
 -sidekiq and :redis (for sending asynchronous emails)
+
 -factory_bot_rails
+
 -shoulda-matchers
+
 -faker
+
 -database_cleaner
+
+
+# ROUTES
+
+Please run rake routes to see the respective routes
+
+*GET /users/total_coins_value?:user_id=user_id*
+
+*GET /users/user_transactions?:user_id=user_id*
+
+*GET /users/transactions?:user_id=user_id*
+
