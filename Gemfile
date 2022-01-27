@@ -31,7 +31,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # The sinatra gem is required to access the web console for monitoring the state of the installation.
 gem 'sinatra', '>= 1.3.0', :require => nil
 # Sidekiq is one of the more widely used background job frameworks that you can implement in a Rails application. It is backed by Redis, an in-memory key-value store known for its flexibility and performance. (ref: https://www.digitalocean.com/community/tutorials/how-to-add-sidekiq-and-redis-to-a-ruby-on-rails-application)
-gem 'sidekiq', '~>6.0.0'
+gem 'sidekiq', '~>6.4.0'
 gem 'redis-rails'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
